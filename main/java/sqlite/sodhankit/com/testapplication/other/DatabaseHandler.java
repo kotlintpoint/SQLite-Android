@@ -82,8 +82,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	
 	public Contact SelectContactByID(int id)
 	{
-		//DatabaseHandler handler=new DatabaseHandler(context);
-		SQLiteDatabase db=this.getReadableDatabase();
 		String[] projection={COLUMN_ID,COLUMN_NAME,COLUMN_NUMBER};
 		
 		
@@ -106,7 +104,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	public ArrayList<Contact> SelectAllContacts()
 	{
 
-		SQLiteDatabase db=this.getReadableDatabase();
 		String[] projection={COLUMN_ID,COLUMN_NAME,COLUMN_NUMBER};
 		
 		
