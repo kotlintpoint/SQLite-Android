@@ -98,12 +98,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 			    );
 		if(cursor.moveToFirst())
 		{
-			Contact contact=new Contact();
-			contact.setId(cursor.getInt( cursor.getColumnIndexOrThrow(COLUMN_ID)));
-			contact.setName(cursor.getString( cursor.getColumnIndexOrThrow(COLUMN_NAME)));
-			contact.setNumber(cursor.getString( cursor.getColumnIndexOrThrow(COLUMN_NUMBER)));
-
-			return contact;
+			return cursorToContact(cursor);
 		}
 		return null;
 	}
